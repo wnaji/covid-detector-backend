@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, String> {
 
-	@Query(value = "SELECT EXISTS (SELECT * FROM accounts WHERE username = ?1)", nativeQuery = true)
+	//@Query(value = "SELECT EXISTS (SELECT * FROM accounts WHERE username = ?1)", nativeQuery = true)
 	boolean existsByUsername(String username);
 
 	Account findByUsername(String username);
